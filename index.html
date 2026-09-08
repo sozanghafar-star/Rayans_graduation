@@ -7,9 +7,8 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,400&family=Noto+Naskh+Arabic:wght@500;700;800&display=swap" rel="stylesheet">
   
-  <!-- کتێبخانەی یاری ئاگرین -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <style>
@@ -39,7 +38,7 @@
       align-items: center;
     }
 
-    /* --- پەڕەی ١: ڤیدیۆ بە پڕی شاشە --- */
+    /* --- پەڕەی ١: ڤیدیۆ --- */
     #page1 {
       position: fixed;
       top: 0;
@@ -55,128 +54,143 @@
     #myGraduationVideo {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* تەواوی شاشەی مۆبایل و کۆمپیوتەر دادەپۆشێت بە جوانی */
+      object-fit: cover;
     }
 
-    /* --- پەڕەی ٢: باگراوندی وێنە --- */
+    /* --- پەڕەی ٢: باگراوندی وێنە و دەعوەتنامە --- */
     #page2 {
       height: 100vh;
       background-image: url('ca1dae0ded85eee641706998a10fd9b0.jpg');
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
-      justify-content: space-between;
-      padding: 20px;
+      position: relative;
+      overflow: hidden;
     }
 
+    /* ڕێکخستنی شوێنی نوسین لە ناوەڕاستی پەڕە سوتاوەکە */
     .invitation-text-box {
-      margin-top: 36vh;
-      width: 68%;
-      max-width: 320px;
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 66%;
+      max-width: 330px;
       text-align: center;
-      color: #3d2110;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.8;
-      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+      color: #3b1904;
+      font-size: 18.5px; /* فۆنتی گەورەتر */
+      font-weight: 800;
+      line-height: 2.1;
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 245, 230, 0.5);
     }
 
     /* دوگمەی بێجی شوشەیی */
     .glass-btn {
-      margin-bottom: 40px;
-      padding: 14px 26px;
-      background: rgba(245, 235, 220, 0.45);
-      border: 1.5px solid rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: 30px;
-      color: #3b1e08;
-      font-weight: bold;
-      font-size: 15px;
+      position: absolute;
+      bottom: 45px;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      padding: 16px 30px;
+      background: rgba(245, 235, 220, 0.4);
+      border: 1.5px solid rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 35px;
+      color: #301602;
+      font-weight: 800;
+      font-size: 17px;
       cursor: pointer;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s, background 0.3s;
     }
 
     .glass-btn:active {
-      transform: scale(0.96);
+      transform: translateX(-50%) scale(0.95);
     }
 
     /* --- پەڕەی ٣: سەرەکی --- */
     #page3 {
-      background: radial-gradient(circle, #3d1c06 0%, #200d02 100%);
-      padding: 30px 15px 50px 15px;
+      background: radial-gradient(circle, #381905 0%, #170701 100%);
+      padding: 35px 15px 60px 15px;
       position: relative;
     }
 
-    /* بریسکەی درەوشاوەی ڕەساسی */
+    /* بریسکەی درەوشاوەی ڕەساسی زۆر و چڕ */
     .sparkles {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
       pointer-events: none;
       background-image: 
-        radial-gradient(1.5px 1.5px at 20px 30px, #e0e0e0, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 90px 40px, #c0c0c0, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 160px 120px, #d9d9d9, rgba(0,0,0,0));
+        radial-gradient(2px 2px at 15px 25px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 50px 75px, #dcdcdc, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 95px 35px, #bfbfbf, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 140px 130px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 180px 60px, #e8e8e8, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 35px 160px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 110px 180px, #c8c8c8, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 170px 210px, #e0e0e0, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 75px 240px, #ffffff, rgba(0,0,0,0));
       background-repeat: repeat;
-      background-size: 200px 200px;
-      animation: sparkleAnim 3s linear infinite alternate;
+      background-size: 240px 240px;
+      animation: sparkleAnim 2.5s ease-in-out infinite alternate;
       z-index: 1;
     }
 
     @keyframes sparkleAnim {
-      0% { opacity: 0.3; transform: scale(1); }
-      100% { opacity: 0.9; transform: scale(1.03); }
+      0% { opacity: 0.45; transform: scale(1); filter: brightness(1); }
+      100% { opacity: 1; transform: scale(1.04); filter: brightness(1.4); }
     }
 
     .main-container {
       position: relative;
       z-index: 2;
       width: 100%;
-      max-width: 450px;
+      max-width: 480px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 22px;
+      gap: 25px;
     }
 
     .bismillah {
       font-family: 'Amiri', serif;
-      font-size: 24px;
+      font-size: 28px; /* فۆنتی گەورەتر */
       color: #ffffff;
-      margin-top: 10px;
+      margin-top: 5px;
+      text-shadow: 0 0 12px rgba(255,255,255,0.6);
     }
 
     .offwhite-badge {
       background-color: #fdfbf7;
-      color: #4a250e;
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-size: 22px;
-      font-weight: bold;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      width: 90%;
+      color: #3b1704;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 26px; /* فۆنتی گەورەتر */
+      font-weight: 800;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      width: 95%;
     }
 
     .sub-text {
-      color: #f5ece5;
-      font-size: 14px;
-      line-height: 1.9;
+      color: #fcefe6;
+      font-size: 17px; /* فۆنتی گەورەتر */
+      line-height: 2.1;
       padding: 0 10px;
+      font-weight: 500;
     }
 
     .image-frame-9-16 {
-      width: 240px;
-      height: 426px; /* ڕێژەی 9:16 */
-      border-top-left-radius: 120px;
-      border-top-right-radius: 120px;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-      border: 3px solid #fdfbf7;
+      width: 250px;
+      height: 444px;
+      border-top-left-radius: 125px;
+      border-top-right-radius: 125px;
+      border-bottom-left-radius: 14px;
+      border-bottom-right-radius: 14px;
+      border: 4px solid #fdfbf7;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
       background: #4a250e;
     }
 
@@ -186,61 +200,67 @@
       object-fit: cover;
     }
 
+    .section-title {
+      font-size: 21px; /* فۆنتی گەورەتر */
+      color: #ffffff;
+      font-weight: 700;
+    }
+
     .calendar-card {
-      background-color: #fbf9f4;
-      border-radius: 15px;
-      padding: 15px;
-      width: 90%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      color: #3b1e08;
+      background-color: #fcf9f2;
+      border-radius: 16px;
+      padding: 18px;
+      width: 95%;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+      color: #2e1403;
     }
 
     .calendar-header {
-      font-weight: bold;
-      font-size: 16px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #d4c7b8;
-      padding-bottom: 5px;
+      font-weight: 800;
+      font-size: 18px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #dfcfbc;
+      padding-bottom: 6px;
     }
 
     .calendar-grid {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       gap: 6px;
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 16px; /* فۆنتی گەورەتر */
+      font-weight: 700;
     }
 
     .calendar-grid span {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 28px;
+      height: 32px;
     }
 
     .heart-highlight {
       position: relative;
-      color: #ff3366 !important;
-      font-weight: bold;
+      color: #e6004c !important;
+      font-weight: 800;
     }
 
     .heart-highlight::after {
       content: '♥';
       position: absolute;
-      font-size: 32px;
-      color: #ff6699;
-      opacity: 0.6;
+      font-size: 38px;
+      color: #ff3377;
+      opacity: 0.65;
       pointer-events: none;
-      top: -6px;
+      top: -8px;
       left: 3px;
     }
 
     .countdown-box {
-      background: #4a250e;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 12px;
-      padding: 12px 5px;
-      width: 90%;
+      background: #451e06;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 14px;
+      padding: 14px 8px;
+      width: 95%;
       display: flex;
       justify-content: space-around;
       color: #ffffff;
@@ -254,44 +274,47 @@
     }
 
     .time-num {
-      font-size: 18px;
-      font-weight: bold;
-      color: #ffd2a6;
+      font-size: 22px; /* فۆنتی گەورەتر */
+      font-weight: 800;
+      color: #ffd8b3;
     }
 
     .time-label {
-      font-size: 11px;
+      font-size: 13px;
+      font-weight: 600;
     }
 
     .schedule-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 15px;
-      padding: 15px;
-      width: 90%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 18px;
+      width: 95%;
       text-align: right;
     }
 
     .schedule-title {
-      font-size: 17px;
-      color: #ffd2a6;
-      margin-bottom: 10px;
+      font-size: 20px;
+      color: #ffd8b3;
+      margin-bottom: 12px;
       text-align: center;
+      font-weight: 700;
     }
 
     .schedule-list {
       list-style-type: decimal;
-      padding-right: 20px;
-      font-size: 14px;
-      line-height: 2;
+      padding-right: 25px;
+      font-size: 16px; /* فۆنتی گەورەتر */
+      line-height: 2.2;
+      font-weight: 600;
     }
 
     .map-box {
-      width: 90%;
-      border-radius: 12px;
+      width: 95%;
+      border-radius: 14px;
       overflow: hidden;
-      border: 2px solid #ecd5be;
-      height: 180px;
+      border: 3px solid #ebd3ba;
+      height: 200px;
     }
 
     .map-box iframe {
@@ -302,39 +325,35 @@
 
     .action-btn {
       display: inline-block;
-      width: 85%;
-      padding: 12px;
-      background: #ecd5be;
-      color: #3b1e08;
+      width: 90%;
+      padding: 14px;
+      background: #ebd3ba;
+      color: #3b1704;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 25px;
-      font-size: 14px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      font-weight: 800;
+      border-radius: 30px;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.35);
       transition: 0.2s;
+    }
+
+    .action-btn:hover {
+      background: #dfc2a6;
     }
   </style>
 </head>
 <body>
 
-  <!-- دەنگی باگراوند -->
-  <audio id="bgMusic" loop>
+  <audio id="bgMusic" loop preload="auto">
     <source src="your-music.mp3" type="audio/mp3">
   </audio>
 
-  <!-- ==================== پەڕەی ١: ڤیدیۆی ١٠ چرکەیی ==================== -->
   <section id="page1" class="page active-page">
-    
-    <!-- لێرە ناوی ڤیدیۆکەت دابنێ لە ناو src -->
     <video id="myGraduationVideo" autoplay muted playsinline>
-      <!-- ناوی ئەو ڤیدیۆیەی داتناوە لەم شوێنە بنووسە -->
       <source src="gemini_generated_video_b98afbb4.mp4" type="video/mp4">
-      وێبگەڕەکەت پشتگیری ڤیدیۆ ناکات.
     </video>
-
   </section>
 
-  <!-- ==================== پەڕەی ٢: باگراوندی وێنە و دەعوەتنامە ==================== -->
   <section id="page2" class="page">
     <div class="invitation-text-box">
       <span id="guestGreeting">سڵاو</span> بەڕێزتان بانگهێشت کراون بۆ ئاهەنگی دەرچوونم لە زانکۆ ، بەهاتنتان ڕۆژەکەم مانادارتر دەکەن
@@ -343,7 +362,6 @@
     <button class="glass-btn" onclick="goToMainPage()">بۆ زانیاری زیاتر دەست لەم کرتەیە بدە</button>
   </section>
 
-  <!-- ==================== پەڕەی ٣: پەڕەی سەرەکی ==================== -->
   <section id="page3" class="page">
     <div class="sparkles"></div>
     
@@ -362,7 +380,7 @@
         <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500" alt="وێنەی دەرچوون">
       </div>
 
-      <div>بەرواری ئاهەنگەکە : 15/12/2026</div>
+      <div class="section-title">بەرواری ئاهەنگەکە : 15/12/2026</div>
 
       <div class="calendar-card">
         <div class="calendar-header">December / کانوونی یەکەم - ٢٠٢٦</div>
@@ -392,7 +410,7 @@
         </ol>
       </div>
 
-      <div>ناونیشانی ئاهەنگەکە : زانکۆی کۆیە</div>
+      <div class="section-title">ناونیشانی ئاهەنگەکە : زانکۆی کۆیە</div>
       <div class="map-box">
         <iframe src="https://maps.google.com/maps?q=Koya+University&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
       </div>
@@ -400,7 +418,7 @@
         کردنەوە لە ڕێگەی گۆگڵ ماپ (Google Maps)
       </a>
 
-      <p style="font-size: 14px; margin-top: 10px;">بۆ هەر زانیاریەکی تر دەتوانن پەیوەندیمان پێوە بکەن</p>
+      <p style="font-size: 16px; margin-top: 10px; font-weight: 600;">بۆ هەر زانیاریەکی تر دەتوانن پەیوەندیمان پێوە بکەن</p>
       
       <a href="tel:07500000000" class="action-btn" style="background: #25d366; color: #fff;">
         📞 پەیوەندی کردن بە تەلەفۆن
@@ -408,7 +426,6 @@
     </div>
   </section>
 
-  <!-- ==================== سکریپت ==================== -->
   <script>
     const page1 = document.getElementById('page1');
     const page2 = document.getElementById('page2');
@@ -416,40 +433,39 @@
     const video = document.getElementById('myGraduationVideo');
     const bgMusic = document.getElementById('bgMusic');
 
-    // خوێندنەوەی ناوی میوان لە لینکەوە (?name=ناوی_کەسەکە)
+    // وەرگرتنی ناوی میوان لە لینکەوە (?name=ناوی_کەسەکە)
     const urlParams = new URLSearchParams(window.location.search);
     const guestName = urlParams.get('name');
     if (guestName) {
       document.getElementById('guestGreeting').innerText = guestName;
     }
 
-    // پاش ١٠ چرکە ڤیدیۆکە لا دەبات و دەچێتە پەڕەی ٢
+    // پاش ١٠ چرکە ڤیدیۆ دەوەستێت و دەچێتە پەڕەی دووەم
     setTimeout(() => {
       video.pause();
       page1.classList.remove('active-page');
       page2.classList.add('active-page');
-      
-      // کارپێکردنی گۆرانی
-      bgMusic.play().catch(err => {
-        console.log("پێویست بە کرتەکردن دەکات بۆ دەنگ");
-      });
     }, 10000);
 
-    // گواستنەوە بۆ پەڕەی سەرەکی
+    // گواستنەوە بۆ پەڕەی سەرەکی و کارپێکردنی گۆرانی لەگەڵ کرتەکردن
     function goToMainPage() {
-      bgMusic.play().catch(e => {});
+      // دەستپێکردنی گۆرانی دەستبەجێ بە کرتەی میوانەکە
+      bgMusic.currentTime = 0;
+      bgMusic.play().catch(e => {
+        console.log("هەڵە لە لێدانی گۆرانی:", e);
+      });
 
       page2.classList.remove('active-page');
       page3.classList.add('active-page');
       window.scrollTo(0, 0);
 
-      // یاری ئاگرین بۆ ٢ چرکە
+      // یاری ئاگرین (Confetti) بۆ ماوەی ٢ چرکە
       const duration = 2 * 1000;
       const end = Date.now() + duration;
 
       (function frame() {
-        confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0 } });
-        confetti({ particleCount: 4, angle: 120, spread: 55, origin: { x: 1 } });
+        confetti({ particleCount: 5, angle: 60, spread: 60, origin: { x: 0 } });
+        confetti({ particleCount: 5, angle: 120, spread: 60, origin: { x: 1 } });
         if (Date.now() < end) requestAnimationFrame(frame);
       }());
     }
