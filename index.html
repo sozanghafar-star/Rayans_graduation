@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ئاهەنگی دەرچوونی ڕەیان یحیا</title>
   
-  <!-- فۆنتە عەرەبی و کوردییە جوانەکان -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,400&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
@@ -27,7 +26,6 @@
       overflow-x: hidden;
     }
 
-    /* پەڕەکان */
     .page {
       display: none;
       width: 100%;
@@ -41,32 +39,38 @@
       align-items: center;
     }
 
-    /* --- پەڕەی ١: ڤیدیۆ --- */
+    /* --- پەڕەی ١: ڤیدیۆ بە پڕی شاشە --- */
     #page1 {
-      justify-content: center;
-      background: #000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
       height: 100vh;
-      overflow: hidden;
+      background: #000;
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
     }
 
-    #page1 video {
+    #myGraduationVideo {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: cover; /* تەواوی شاشەی مۆبایل و کۆمپیوتەر دادەپۆشێت بە جوانی */
     }
 
-    /* --- پەڕەی ٢: وێنە و کارت --- */
+    /* --- پەڕەی ٢: باگراوندی وێنە --- */
     #page2 {
       height: 100vh;
-      /* ناوی وێنەکەت لێرە دابنێ */
-      background: url('ca1dae0ded85eee641706998a10fd9b0.jpg') no-repeat center center;
+      background-image: url('ca1dae0ded85eee641706998a10fd9b0.jpg');
+      background-position: center center;
       background-size: cover;
+      background-repeat: no-repeat;
       justify-content: space-between;
       padding: 20px;
     }
 
     .invitation-text-box {
-      margin-top: 36vh; /* ڕێکخستنی شوێن بۆ ناوەڕاستی پەڕە سوتاوەکە بەبێ گرتنی پەپولە و گوڵەکە */
+      margin-top: 36vh;
       width: 68%;
       max-width: 320px;
       text-align: center;
@@ -80,7 +84,7 @@
     /* دوگمەی بێجی شوشەیی */
     .glass-btn {
       margin-bottom: 40px;
-      padding: 14px 28px;
+      padding: 14px 26px;
       background: rgba(245, 235, 220, 0.45);
       border: 1.5px solid rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(8px);
@@ -88,24 +92,24 @@
       border-radius: 30px;
       color: #3b1e08;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 15px;
       cursor: pointer;
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-      transition: transform 0.2s, background 0.3s;
+      transition: transform 0.2s;
     }
 
     .glass-btn:active {
       transform: scale(0.96);
     }
 
-    /* --- پەڕەی ٣: پەڕەی سەرەکی --- */
+    /* --- پەڕەی ٣: سەرەکی --- */
     #page3 {
       background: radial-gradient(circle, #3d1c06 0%, #200d02 100%);
       padding: 30px 15px 50px 15px;
       position: relative;
     }
 
-    /* بریسکەی درەوشاوەی ڕەساسی هەمیشەیی */
+    /* بریسکەی درەوشاوەی ڕەساسی */
     .sparkles {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -123,7 +127,7 @@
 
     @keyframes sparkleAnim {
       0% { opacity: 0.3; transform: scale(1); }
-      100% { opacity: 0.85; transform: scale(1.03); }
+      100% { opacity: 0.9; transform: scale(1.03); }
     }
 
     .main-container {
@@ -138,16 +142,13 @@
       gap: 22px;
     }
 
-    /* بەشی ١ */
     .bismillah {
       font-family: 'Amiri', serif;
       font-size: 24px;
       color: #ffffff;
       margin-top: 10px;
-      text-shadow: 0 0 10px rgba(255,255,255,0.4);
     }
 
-    /* بەشی ٢ */
     .offwhite-badge {
       background-color: #fdfbf7;
       color: #4a250e;
@@ -166,10 +167,9 @@
       padding: 0 10px;
     }
 
-    /* بەشی ٣: لاکێشەی وێنە بە قەبارەی 9:16 و کەوانەیی سەرەوە */
     .image-frame-9-16 {
       width: 240px;
-      height: 426px; /* 9:16 ratio */
+      height: 426px; /* ڕێژەی 9:16 */
       border-top-left-radius: 120px;
       border-top-right-radius: 120px;
       border-bottom-left-radius: 12px;
@@ -184,13 +184,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    /* بەشی ٤: کالێندەر و کاتژمێری پێچەوانە */
-    .date-title {
-      font-size: 18px;
-      color: #fff;
-      font-weight: bold;
     }
 
     .calendar-card {
@@ -225,7 +218,6 @@
       height: 28px;
     }
 
-    /* نیشانەکردنی بەرواری ١٥ بە هێڵی دڵ */
     .heart-highlight {
       position: relative;
       color: #ff3366 !important;
@@ -271,7 +263,6 @@
       font-size: 11px;
     }
 
-    /* بەشی ٥: پلان */
     .schedule-card {
       background: rgba(255, 255, 255, 0.06);
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -295,7 +286,6 @@
       line-height: 2;
     }
 
-    /* بەشی ٦: نەخشە */
     .map-box {
       width: 90%;
       border-radius: 12px;
@@ -323,25 +313,25 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       transition: 0.2s;
     }
-
-    .action-btn:hover {
-      background: #dfc2a6;
-    }
   </style>
 </head>
 <body>
 
-  <!-- دەنگی باگراوند (گۆرانی دڵخوازی خۆت لە src دابنێ) -->
+  <!-- دەنگی باگراوند -->
   <audio id="bgMusic" loop>
     <source src="your-music.mp3" type="audio/mp3">
   </audio>
 
-  <!-- ==================== پەڕەی ١: ڤیدیۆی ١٠ چرکە ==================== -->
+  <!-- ==================== پەڕەی ١: ڤیدیۆی ١٠ چرکەیی ==================== -->
   <section id="page1" class="page active-page">
-    <!-- ناوی پەڕگەی ڤیدیۆکەت لەجێی video_1.mp4 دابنێ -->
-    <video id="introVideo" autoplay muted playsinline>
-      <source src="video_1.mp4" type="video/mp4">
+    
+    <!-- لێرە ناوی ڤیدیۆکەت دابنێ لە ناو src -->
+    <video id="myGraduationVideo" autoplay muted playsinline>
+      <!-- ناوی ئەو ڤیدیۆیەی داتناوە لەم شوێنە بنووسە -->
+      <source src="ڤیدیۆی_دروستکراوی_دووانە_b98afbb4.mp4" type="video/mp4">
+      وێبگەڕەکەت پشتگیری ڤیدیۆ ناکات.
     </video>
+
   </section>
 
   <!-- ==================== پەڕەی ٢: باگراوندی وێنە و دەعوەتنامە ==================== -->
@@ -358,10 +348,8 @@
     <div class="sparkles"></div>
     
     <div class="main-container">
-      <!-- ۱. بەناوی خوای گەورە -->
       <div class="bismillah">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
 
-      <!-- ٢. ناونیشان و نوسین -->
       <div class="offwhite-badge">
         ئاهەنگی دەرچوونی ڕەیان یحیا
       </div>
@@ -370,20 +358,16 @@
         دوای ماندووبونێکی زۆر و تێپەڕاندنی چوار ساڵ شەونخونی و دووری لەماڵ و خێزانەکەم ، ئەمڕۆ بەویستی خودا بەروبومی ماندووبوونم دەچنمەوە ، بە ئامادە بوونت ئاهەنگەکەم مانادارتر دەکەیت
       </p>
 
-      <!-- ٣. لاکێشەی وێنە 9:16 کەوانەیی -->
       <div class="image-frame-9-16">
-        <!-- وێنەی دڵخوازی خۆت لە src دابنێ -->
         <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500" alt="وێنەی دەرچوون">
       </div>
 
-      <!-- ٤. بەروار، ڕۆژژمێر و کاتی پێچەوانە -->
-      <div class="date-title">بەرواری ئاهەنگەکە : 15/12/2026</div>
+      <div>بەرواری ئاهەنگەکە : 15/12/2026</div>
 
       <div class="calendar-card">
         <div class="calendar-header">December / کانوونی یەکەم - ٢٠٢٦</div>
         <div class="calendar-grid">
           <span>ش</span><span>ی</span><span>د</span><span>س</span><span>چ</span><span>پ</span><span>هـ</span>
-          <!-- پڕکردنەوەی ڕۆژەکانی مانگی 12ی 2026 -->
           <span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
           <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
           <span>13</span><span>14</span><span class="heart-highlight">15</span><span>16</span><span>17</span><span>18</span><span>19</span>
@@ -392,7 +376,6 @@
         </div>
       </div>
 
-      <!-- کاتژمێری پێچەوانە -->
       <div class="countdown-box">
         <div class="time-sec"><span class="time-num" id="days">0</span><span class="time-label">ڕۆژ</span></div>
         <div class="time-sec"><span class="time-num" id="hours">0</span><span class="time-label">کاتژمێر</span></div>
@@ -400,7 +383,6 @@
         <div class="time-sec"><span class="time-num" id="seconds">0</span><span class="time-label">چرکە</span></div>
       </div>
 
-      <!-- ٥. پلانی ئاهەنگەکە -->
       <div class="schedule-card">
         <div class="schedule-title">پلانی ئاهەنگەکە</div>
         <ol class="schedule-list">
@@ -410,106 +392,78 @@
         </ol>
       </div>
 
-      <!-- ٦. ناونیشان و نەخشە -->
-      <div class="date-title">ناونیشانی ئاهەنگەکە : زانکۆی کۆیە</div>
+      <div>ناونیشانی ئاهەنگەکە : زانکۆی کۆیە</div>
       <div class="map-box">
-        <!-- نەخشەی زانکۆی کۆیە -->
         <iframe src="https://maps.google.com/maps?q=Koya+University&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
       </div>
       <a href="https://maps.google.com/?q=Koya+University" target="_blank" class="action-btn">
         کردنەوە لە ڕێگەی گۆگڵ ماپ (Google Maps)
       </a>
 
-      <!-- ۷. پەیوەندی -->
       <p style="font-size: 14px; margin-top: 10px;">بۆ هەر زانیاریەکی تر دەتوانن پەیوەندیمان پێوە بکەن</p>
       
-      <!-- ژمارە تەلەفۆنەکەت لە دوای :tel بنووسە -->
       <a href="tel:07500000000" class="action-btn" style="background: #25d366; color: #fff;">
         📞 پەیوەندی کردن بە تەلەفۆن
       </a>
     </div>
   </section>
 
-  <!-- ==================== سکریپتەکان ==================== -->
+  <!-- ==================== سکریپت ==================== -->
   <script>
-    // پەڕەکان
     const page1 = document.getElementById('page1');
     const page2 = document.getElementById('page2');
     const page3 = document.getElementById('page3');
+    const video = document.getElementById('myGraduationVideo');
     const bgMusic = document.getElementById('bgMusic');
 
-    // خوێندنەوەی ناوی میوان لە لینکەوە: ?name=ناوی_کەسەکە
+    // خوێندنەوەی ناوی میوان لە لینکەوە (?name=ناوی_کەسەکە)
     const urlParams = new URLSearchParams(window.location.search);
     const guestName = urlParams.get('name');
     if (guestName) {
       document.getElementById('guestGreeting').innerText = guestName;
     }
 
-    // گواستنەوە دوای ١٠ چرکە بۆ پەڕەی ٢ و لێدانی گۆرانی
+    // پاش ١٠ چرکە ڤیدیۆکە لا دەبات و دەچێتە پەڕەی ٢
     setTimeout(() => {
+      video.pause();
       page1.classList.remove('active-page');
       page2.classList.add('active-page');
       
-      // کارپێکردنی مۆسیقا
-      bgMusic.play().catch(e => {
-        console.log("پێویستی بە کرتەی بەکارهێنەرە بۆ مۆسیقا بەهۆی ڕێسای وێبگەڕەکان");
+      // کارپێکردنی گۆرانی
+      bgMusic.play().catch(err => {
+        console.log("پێویست بە کرتەکردن دەکات بۆ دەنگ");
       });
-    }, 10000); // 10000 میلی چرکە = ١٠ چرکە
+    }, 10000);
 
-    // گواستنەوە بۆ پەڕەی سەرەکی بە دوگمەکە
+    // گواستنەوە بۆ پەڕەی سەرەکی
     function goToMainPage() {
-      // ئەگەر دەنگەکە دەستی پێ نەکردبوو، لێرەدا کار دەکات
       bgMusic.play().catch(e => {});
 
       page2.classList.remove('active-page');
       page3.classList.add('active-page');
       window.scrollTo(0, 0);
 
-      // یاری ئاگرین (Confetti) بۆ ماوەی ٢ چرکە
+      // یاری ئاگرین بۆ ٢ چرکە
       const duration = 2 * 1000;
       const end = Date.now() + duration;
 
       (function frame() {
-        confetti({
-          particleCount: 4,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0 }
-        });
-        confetti({
-          particleCount: 4,
-          angle: 120,
-          spread: 55,
-          origin: { x: 1 }
-        });
-
-        if (Date.now() < end) {
-          requestAnimationFrame(frame);
-        }
+        confetti({ particleCount: 4, angle: 60, spread: 55, origin: { x: 0 } });
+        confetti({ particleCount: 4, angle: 120, spread: 55, origin: { x: 1 } });
+        if (Date.now() < end) requestAnimationFrame(frame);
       }());
     }
 
-    // کاتژمێری پێچەوانە بۆ 15/12/2026
+    // کاتژمێری پێچەوانە
     const graduationDate = new Date("December 15, 2026 15:00:00").getTime();
+    setInterval(() => {
+      const distance = graduationDate - new Date().getTime();
+      if (distance < 0) return;
 
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = graduationDate - now;
-
-      if (distance < 0) {
-        clearInterval(timer);
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("days").innerText = days;
-      document.getElementById("hours").innerText = hours;
-      document.getElementById("minutes").innerText = minutes;
-      document.getElementById("seconds").innerText = seconds;
+      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
     }, 1000);
   </script>
 </body>
